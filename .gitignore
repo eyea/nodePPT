@@ -1,3 +1,4 @@
+yarn.lock
 /node_modules
 /.sass-cache
 /src/index.html
@@ -5,13 +6,16 @@
 /3th
 /.idea
 /.vscode
-
+.DS_Store
 /npm-debug.log
-/output
-/publish
+dist
+publish
+output
 
+yarn-lock.json
+package-lock.json
 
-
+.DS_Store
 ### Node ###
 # Logs
 logs

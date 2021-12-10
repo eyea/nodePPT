@@ -1,11 +1,19 @@
 #! /bin/sh
-
+set -e
 rm -rf publish
-node ./bin/nodeppt release ppts/demo.md -a
+cd site
 
-cd publish
-mv demo.html index.html
+node ../packages/nodeppt/bin/nodeppt build index.md
+node ../packages/nodeppt/bin/nodeppt build animation.md
+node ../packages/nodeppt/bin/nodeppt build component.md
+node ../packages/nodeppt/bin/nodeppt build layout.md
+node ../packages/nodeppt/bin/nodeppt build media.md
+node ../packages/nodeppt/bin/nodeppt build background.md
+node ../packages/nodeppt/bin/nodeppt build classes.md
 
+cd dist
+
+echo 'nodeppt.js.org' > CNAME
 git init
 git add -A
 date_str=`date "+DATE: %m/%d/%Y%nTIME: %H:%M:%S"`
